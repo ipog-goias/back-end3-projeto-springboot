@@ -1,0 +1,49 @@
+project:
+  name: '@project.artifactId@'
+  version: '@project.version@'
+  description: '@project.description@'
+
+info:
+  build:
+    artifact: "@project.artifactId@"
+    name: "@project.name@"
+    description: '@project.description@'
+    version: '@project.version@'
+
+application:
+  title: ${project.name}
+  version: ${project.version}
+
+spring:
+  output:
+    ansi:
+      enabled: ${SPRING_OUTPUT_ANSI_ENABLE}
+  banner:
+    charset: ${SPRING_BANNER_CHARSET}
+    location: ${SPRING_BANNER_LOCATION}
+
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    show-sql: true #Opcao para apresentar a execucao de SQL no projeto.
+    generate-ddl: true #Cria DDDL (Crias a instrucoes de criacao/alteracao de tabela)
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.jdbc.batch_size: 20
+      hibernate.cache.use_query_cache: false
+      hibernate.cache.use_second_level_cache: false
+      hibernate.cache.use_structured_entries: false
+      hibernate.cache.use_minimal_puts: false
+
+  # Database
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://172.17.0.2:5432/postgres
+    username: postgres
+    password: 123456
+
+  flyway:
+    baseline-on-migrate: true
+    validate-on-migrate: false
