@@ -9,5 +9,4 @@ class IpogRhApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

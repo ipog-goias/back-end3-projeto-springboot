@@ -8,11 +8,13 @@
 		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>br.edu.ipog.backend3</groupId>
 	<artifactId>rh</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Ipog RH</name>
 	<description>Projeto SpringBoot de exemplo para um projeto de RH</description>
+
 	<properties>
 		<java.version>17</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

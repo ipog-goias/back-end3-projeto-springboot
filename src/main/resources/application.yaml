@@ -23,27 +23,27 @@ spring:
     location: ${SPRING_BANNER_LOCATION}
 
   jpa:
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    open-in-view: false
-    show-sql: true #Opcao para apresentar a execucao de SQL no projeto.
-    generate-ddl: true #Cria DDDL (Crias a instrucoes de criacao/alteracao de tabela)
+    database: ${JPA_DATABASE}
+    database-platform: ${JPA_DATABASE_PLATFORM}
+    open-in-view: ${JPA_OPEN_IN_VIEW}
+    show-sql: ${JPA_SHOW_SQL} #Opcao para apresentar a execucao de SQL no projeto.
+    generate-ddl: ${JPA_GENERATE_DDL} #Cria DDDL (Crias a instrucoes de criacao/alteracao de tabela)
     hibernate:
-      ddl-auto: update
+      ddl-auto: ${JPA_DDL_AUTO}
     properties:
-      hibernate.jdbc.batch_size: 20
-      hibernate.cache.use_query_cache: false
-      hibernate.cache.use_second_level_cache: false
-      hibernate.cache.use_structured_entries: false
-      hibernate.cache.use_minimal_puts: false
+      hibernate.jdbc.batch_size: ${JPA_HIBERNATE_JDBC_BATCH_SIZE}
+      hibernate.cache.use_query_cache: ${JPA_HIBERNATE_CACHE_USE_QUERY_CACHE}
+      hibernate.cache.use_second_level_cache: ${JPA_HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE}
+      hibernate.cache.use_structured_entries: ${JPA_HIBERNATE_CACHE_USE_ENTRIES}
+      hibernate.cache.use_minimal_puts: ${JPA_HIBERNATE_CACHE_USE_MINIMAL_PUTS}
 
   # Database
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://172.17.0.2:5432/postgres
-    username: postgres
-    password: 123456
+    driver-class-name: ${DS_DRIVER_CLASS_NAME}
+    url: ${DS_URL}
+    username: ${DS_USER}
+    password: ${DS_PASSWORD}
 
   flyway:
-    baseline-on-migrate: true
-    validate-on-migrate: false
+    baseline-on-migrate: ${FLYWAY_BASELINE_MIGRATE}
+    validate-on-migrate: ${FLYWAY_VALIDATE_MIGRATE}
