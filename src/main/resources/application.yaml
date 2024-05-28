@@ -29,13 +29,16 @@ spring:
     show-sql: ${JPA_SHOW_SQL} #Opcao para apresentar a execucao de SQL no projeto.
     generate-ddl: ${JPA_GENERATE_DDL} #Cria DDDL (Crias a instrucoes de criacao/alteracao de tabela)
     hibernate:
-      ddl-auto: ${JPA_DDL_AUTO}
+      ddl-auto: update
     properties:
-      hibernate.jdbc.batch_size: ${JPA_HIBERNATE_JDBC_BATCH_SIZE}
-      hibernate.cache.use_query_cache: ${JPA_HIBERNATE_CACHE_USE_QUERY_CACHE}
-      hibernate.cache.use_second_level_cache: ${JPA_HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE}
-      hibernate.cache.use_structured_entries: ${JPA_HIBERNATE_CACHE_USE_ENTRIES}
-      hibernate.cache.use_minimal_puts: ${JPA_HIBERNATE_CACHE_USE_MINIMAL_PUTS}
+      hibernate:
+        jdbc:
+          batch_size: ${JPA_HIBERNATE_JDBC_BATCH_SIZE}
+        cache:
+          use_query_cache: ${JPA_HIBERNATE_CACHE_USE_QUERY_CACHE}
+          use_second_level_cache: ${JPA_HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE}
+          use_structured_entries: ${JPA_HIBERNATE_CACHE_USE_ENTRIES}
+          use_minimal_puts: ${JPA_HIBERNATE_CACHE_USE_MINIMAL_PUTS}
 
   # Database
   datasource:
@@ -47,3 +50,11 @@ spring:
   flyway:
     baseline-on-migrate: ${FLYWAY_BASELINE_MIGRATE}
     validate-on-migrate: ${FLYWAY_VALIDATE_MIGRATE}
+
+#Logging
+logging:
+  level:
+    br.edu.ipog.backend3.rh: info
+    org.springframework.web: info
+    org:
+      hibernate.type: info #Qualquer parâmetro que houver na instrução SQL será exibido no console.
