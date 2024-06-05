@@ -8,8 +8,11 @@ import java.math.BigDecimal;
 @Table(name = "ALUNO") //Indica o nome da tabela para ser criada no banco de dados
 public class Aluno extends BaseModel {
 
-    @Column(name = "NOMEx", nullable = false)
-    private String nomex;
+    @Column(name = "NOME", nullable = false)
+    private String nome;
+
+    @Column(name = "MATRICULA", nullable = false)
+    private String matricula;
 
     @Column(name = "NOTA", columnDefinition = "numeric(9,2)", nullable = false)
     private BigDecimal nota;
