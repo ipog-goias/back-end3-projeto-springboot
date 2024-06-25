@@ -1,4 +1,7 @@
 package br.edu.ipog.backend3.rh.interfaces;
+import org.springframework.http.ResponseEntity;
+
+import java.util.List;
 
 /**
  * @see <a href="https://docs.oracle.com/javase/tutorial/java/generics/types.html">Generics Java</a>

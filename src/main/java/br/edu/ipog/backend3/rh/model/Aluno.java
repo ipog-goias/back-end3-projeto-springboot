@@ -1,9 +1,11 @@
 package br.edu.ipog.backend3.rh.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.math.BigDecimal;
 
+@Data
 @Entity //Este parâmetro indica que o JPA irá gerenciar o estado desta classe.
 @Table(name = "ALUNO") //Indica o nome da tabela para ser criada no banco de dados
 public class Aluno extends BaseModel {
