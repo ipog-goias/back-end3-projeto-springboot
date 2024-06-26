@@ -4,10 +4,14 @@ import br.edu.ipog.backend3.rh.contratos.AlunoRequest;
 import br.edu.ipog.backend3.rh.contratos.AlunoResponse;
 import br.edu.ipog.backend3.rh.model.Aluno;
 import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
+import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface AlunoMapper {
 
+    AlunoMapper INSTANCE = Mappers.getMapper( AlunoMapper.class );
 
     //Neste cenário estamos passando o modelo Aluno e requeremo que os
     // dados seja convertidos
@@ -20,5 +24,7 @@ public interface AlunoMapper {
     * */
     Aluno toEntity(AlunoResponse alunoResponse);
     Aluno toEntity(AlunoRequest alunoRequest);
+
+    List<AlunoResponse> toResponseList(List<Aluno> alunos);
 
 }

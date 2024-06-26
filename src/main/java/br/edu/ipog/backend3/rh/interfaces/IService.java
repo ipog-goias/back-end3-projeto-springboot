@@ -38,7 +38,7 @@ public interface IService<T1, T2, N> {
 
     //GET - read(1);
     //T2 RESPONSE
-    T2 read(N id);
+    T2 read(N id) throws Exception ;
 
     //GET - read(); devolve uma lista
     List<T2> read();
@@ -51,7 +51,7 @@ public interface IService<T1, T2, N> {
      * @param id
      * @return
      */
-    T2 updateAll(N id, T1 request);
+    T2 updateAll(N id, T1 request) throws Exception;
 
     /**
      * Este método é para ser utilizado na chamada do verbo PATCH
@@ -59,12 +59,12 @@ public interface IService<T1, T2, N> {
      * @param request
      * @return
      */
-    T2 updatePart(N id, T1 request);
+    T2 updatePart(N id, T1 request) throws Exception;
 
     /**
      * Recebo um ID e apago o registro. Após a execução, devo devolver um T2 (response / reposta)
      * @param id
      * @return
      */
-    T2 delete(N id);
+    T2 delete(N id) throws Exception;
 }

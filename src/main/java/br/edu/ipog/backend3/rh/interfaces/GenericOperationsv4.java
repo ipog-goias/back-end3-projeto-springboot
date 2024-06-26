@@ -38,7 +38,7 @@ public interface GenericOperationsv4<T1, T2, N> {
 
     //GET - read(1);
     //T2 RESPONSE
-    public ResponseEntity<T2> read(N id);
+    public ResponseEntity<T2> read(N id) throws Exception;
 
     //GET - read(); devolve uma lista
     public ResponseEntity<List<T2>> read();
@@ -59,13 +59,13 @@ public interface GenericOperationsv4<T1, T2, N> {
      * @param request
      * @return
      */
-    public ResponseEntity<T2> updatePart(N id, T1 request);
+    public ResponseEntity<T2> updatePart(N id, T1 request) throws Exception;
 
     /**
      * Recebo um ID e apago o registro. Após a execução, devo devolver um T2 (response / reposta)
      * @param id
      * @return
      */
-    public ResponseEntity<T2> delete(N id);
+    public ResponseEntity<T2> delete(N id) throws Exception;
 
 }
